@@ -10,10 +10,15 @@
 		0500B0921B2B92C3002F9418 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0500B0911B2B92C3002F9418 /* main.m */; };
 		0500B0951B2B92C3002F9418 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0500B0941B2B92C3002F9418 /* AppDelegate.m */; };
 		0500B0981B2B92C3002F9418 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0500B0971B2B92C3002F9418 /* ViewController.m */; };
-		0500B09B1B2B92C3002F9418 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0500B0991B2B92C3002F9418 /* Main.storyboard */; };
 		0500B09D1B2B92C3002F9418 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0500B09C1B2B92C3002F9418 /* Images.xcassets */; };
 		0500B0A01B2B92C3002F9418 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0500B09E1B2B92C3002F9418 /* LaunchScreen.xib */; };
 		0500B0AC1B2B92C3002F9418 /* YaplukaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0500B0AB1B2B92C3002F9418 /* YaplukaTests.m */; };
+		0500B0B81B2B940E002F9418 /* UIView+AlertBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0500B0B71B2B940E002F9418 /* UIView+AlertBar.m */; };
+		0500B0BB1B2B9613002F9418 /* Aves.m in Sources */ = {isa = PBXBuildFile; fileRef = 0500B0BA1B2B9613002F9418 /* Aves.m */; };
+		0500B0BE1B2B9A0D002F9418 /* AvesTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0500B0BD1B2B9A0D002F9418 /* AvesTimer.m */; };
+		0500B0C11B2B9F11002F9418 /* AvesToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0500B0C01B2B9F11002F9418 /* AvesToolbar.m */; };
+		0500B0C41B2BA1C7002F9418 /* AvesStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0500B0C31B2BA1C7002F9418 /* AvesStyle.m */; };
+		0500B0CD1B2C3CCE002F9418 /* AvesAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0500B0CC1B2C3CCE002F9418 /* AvesAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,12 +39,23 @@
 		0500B0941B2B92C3002F9418 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0500B0961B2B92C3002F9418 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		0500B0971B2B92C3002F9418 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		0500B09A1B2B92C3002F9418 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0500B09C1B2B92C3002F9418 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0500B09F1B2B92C3002F9418 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0500B0A51B2B92C3002F9418 /* YaplukaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YaplukaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0500B0AA1B2B92C3002F9418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0500B0AB1B2B92C3002F9418 /* YaplukaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YaplukaTests.m; sourceTree = "<group>"; };
+		0500B0B61B2B940E002F9418 /* UIView+AlertBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+AlertBar.h"; path = "Aves/UIView+AlertBar.h"; sourceTree = "<group>"; };
+		0500B0B71B2B940E002F9418 /* UIView+AlertBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+AlertBar.m"; path = "Aves/UIView+AlertBar.m"; sourceTree = "<group>"; };
+		0500B0B91B2B9613002F9418 /* Aves.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Aves.h; path = Aves/Aves.h; sourceTree = "<group>"; };
+		0500B0BA1B2B9613002F9418 /* Aves.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Aves.m; path = Aves/Aves.m; sourceTree = "<group>"; };
+		0500B0BC1B2B9A0D002F9418 /* AvesTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AvesTimer.h; path = Aves/AvesTimer.h; sourceTree = "<group>"; };
+		0500B0BD1B2B9A0D002F9418 /* AvesTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AvesTimer.m; path = Aves/AvesTimer.m; sourceTree = "<group>"; };
+		0500B0BF1B2B9F11002F9418 /* AvesToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AvesToolbar.h; path = Aves/AvesToolbar.h; sourceTree = "<group>"; };
+		0500B0C01B2B9F11002F9418 /* AvesToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AvesToolbar.m; path = Aves/AvesToolbar.m; sourceTree = "<group>"; };
+		0500B0C21B2BA1C7002F9418 /* AvesStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AvesStyle.h; path = Aves/AvesStyle.h; sourceTree = "<group>"; };
+		0500B0C31B2BA1C7002F9418 /* AvesStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AvesStyle.m; path = Aves/AvesStyle.m; sourceTree = "<group>"; };
+		0500B0CB1B2C3CCE002F9418 /* AvesAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AvesAnimation.h; path = Aves/AvesAnimation.h; sourceTree = "<group>"; };
+		0500B0CC1B2C3CCE002F9418 /* AvesAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AvesAnimation.m; path = Aves/AvesAnimation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,11 +97,11 @@
 		0500B08E1B2B92C3002F9418 /* Yapluka */ = {
 			isa = PBXGroup;
 			children = (
+				0500B0B51B2B9327002F9418 /* Aves */,
 				0500B0931B2B92C3002F9418 /* AppDelegate.h */,
 				0500B0941B2B92C3002F9418 /* AppDelegate.m */,
 				0500B0961B2B92C3002F9418 /* ViewController.h */,
 				0500B0971B2B92C3002F9418 /* ViewController.m */,
-				0500B0991B2B92C3002F9418 /* Main.storyboard */,
 				0500B09C1B2B92C3002F9418 /* Images.xcassets */,
 				0500B09E1B2B92C3002F9418 /* LaunchScreen.xib */,
 				0500B08F1B2B92C3002F9418 /* Supporting Files */,
@@ -117,6 +133,25 @@
 				0500B0AA1B2B92C3002F9418 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0500B0B51B2B9327002F9418 /* Aves */ = {
+			isa = PBXGroup;
+			children = (
+				0500B0B61B2B940E002F9418 /* UIView+AlertBar.h */,
+				0500B0B71B2B940E002F9418 /* UIView+AlertBar.m */,
+				0500B0B91B2B9613002F9418 /* Aves.h */,
+				0500B0BA1B2B9613002F9418 /* Aves.m */,
+				0500B0BC1B2B9A0D002F9418 /* AvesTimer.h */,
+				0500B0BD1B2B9A0D002F9418 /* AvesTimer.m */,
+				0500B0BF1B2B9F11002F9418 /* AvesToolbar.h */,
+				0500B0C01B2B9F11002F9418 /* AvesToolbar.m */,
+				0500B0C21B2BA1C7002F9418 /* AvesStyle.h */,
+				0500B0C31B2BA1C7002F9418 /* AvesStyle.m */,
+				0500B0CB1B2C3CCE002F9418 /* AvesAnimation.h */,
+				0500B0CC1B2C3CCE002F9418 /* AvesAnimation.m */,
+			);
+			name = Aves;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +234,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0500B09B1B2B92C3002F9418 /* Main.storyboard in Resources */,
 				0500B0A01B2B92C3002F9418 /* LaunchScreen.xib in Resources */,
 				0500B09D1B2B92C3002F9418 /* Images.xcassets in Resources */,
 			);
@@ -219,8 +253,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0500B0BE1B2B9A0D002F9418 /* AvesTimer.m in Sources */,
+				0500B0CD1B2C3CCE002F9418 /* AvesAnimation.m in Sources */,
+				0500B0BB1B2B9613002F9418 /* Aves.m in Sources */,
 				0500B0981B2B92C3002F9418 /* ViewController.m in Sources */,
+				0500B0C11B2B9F11002F9418 /* AvesToolbar.m in Sources */,
+				0500B0B81B2B940E002F9418 /* UIView+AlertBar.m in Sources */,
 				0500B0951B2B92C3002F9418 /* AppDelegate.m in Sources */,
+				0500B0C41B2BA1C7002F9418 /* AvesStyle.m in Sources */,
 				0500B0921B2B92C3002F9418 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,14 +284,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0500B0991B2B92C3002F9418 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0500B09A1B2B92C3002F9418 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0500B09E1B2B92C3002F9418 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -350,6 +382,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Yapluka/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -360,6 +393,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Yapluka/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
