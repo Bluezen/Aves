@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author       = { "Adrien Long" => "adrien.nuilab@gmail.com" }
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/Bluezen/Aves.git", :commit => "cd5c3b1ffbdb0a0f27e0361b6c35abff274d6035", :tag => "v0.0.1-alpha"}
+  s.source       = { :git => "https://github.com/Bluezen/Aves.git", :tag => "v0.0.1-alpha"}
   s.source_files = "Yapluka/Aves", "Yapluka/Aves/**/*.{h,m}"
   s.requires_arc = true
 
