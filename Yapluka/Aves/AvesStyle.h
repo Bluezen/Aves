@@ -24,6 +24,8 @@ typedef NS_ENUM(NSInteger, AvesStylePreset)
 @property(nonatomic, assign) CGFloat barTopMarginFromSuperview;
 @property(nonatomic, strong) UIColor *textColor;
 @property(nonatomic, strong) UIFont *textFont;
+/// Supported mode: Top Bottom Center. Center by default or if unsupported mode is set.
+@property(nonatomic, assign) UIViewContentMode textVerticalAlignment;
 /// If set to 0, the bar won't hide after a delay. Default is 3 seconds.
 @property(nonatomic, assign) NSTimeInterval hideAfterDelaySeconds;
 @property(nonatomic, assign) BOOL repeats;

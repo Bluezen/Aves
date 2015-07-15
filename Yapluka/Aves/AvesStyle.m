@@ -22,6 +22,7 @@
         self.barTopMarginFromSuperview = 0.0f;
         self.textColor = [UIColor whiteColor];
         self.textFont = [UIFont fontWithName:@"Avenir-Light" size:13.0f];
+        self.textVerticalAlignment = UIViewContentModeCenter;
         self.hideAfterDelaySeconds = 3;
         self.repeats = NO;
         self.displayActivityIndicator = NO;

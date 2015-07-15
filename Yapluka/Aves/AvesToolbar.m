@@ -75,6 +75,7 @@
     self.label.font = self.style.textFont;
     self.label.textColor = self.style.textColor;
     self.label.textAlignment = NSTextAlignmentCenter;
+    self.label.contentMode = self.style.textVerticalAlignment;
     self.label.numberOfLines = 1;
     self.label.text = message;
     
@@ -108,6 +109,7 @@
 -(void)adjustSubviews
 {
     static CGFloat const margin_between_activity_and_label = 6.0f;
+    static CGFloat const min_margin_contentMode = 4.0f;
     CGRect frame = CGRectZero;
     {
         frame = CGRectZero;
@@ -119,16 +121,27 @@
     {
         [self.label sizeToFit];
         frame = self.label.bounds;
-        frame.origin.y = (CGRectGetHeight(self.bounds) - frame.size.height) * 0.5f;
         frame.origin.x = ((CGRectGetWidth(self.bounds) - frame.size.width) * 0.5f) + (self.activityView ? 10.0f + margin_between_activity_and_label : 0.0f);
+        
+        if (self.label.contentMode == UIViewContentModeTop) {
+            frame.origin.y = min_margin_contentMode;
+        }
+        else if (self.label.contentMode == UIViewContentModeBottom) {
+            frame.origin.y = CGRectGetHeight(self.bounds) - frame.size.height - min_margin_contentMode;
+        }
+        else {
+            frame.origin.y = (CGRectGetHeight(self.bounds) - frame.size.height) * 0.5f;
+        }
+        
         self.label.frame = frame;
     }
     {
         // https://stackoverflow.com/questions/2638120/can-i-change-the-size-of-uiactivityindicator
+        self.activityView.center = self.label.center;
         frame = self.activityView.frame;
         frame.origin.x = CGRectGetMinX(self.label.frame) - frame.size.width - margin_between_activity_and_label;
-        frame.origin.y = (CGRectGetHeight(self.bounds) - frame.size.height) * 0.5f;
         self.activityView.frame = frame;
+        
     }
 }
 

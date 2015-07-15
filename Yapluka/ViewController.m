@@ -64,6 +64,7 @@
          style.barTopMarginFromSuperview = 64.0f;
          style.hideAfterDelaySeconds = 0;
          style.displayActivityIndicator = YES;
+         style.barHeight = 40.0f;
      }];
 }
 
