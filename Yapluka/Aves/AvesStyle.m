@@ -55,6 +55,11 @@
     return self;
 }
 
+-(instancetype)init
+{
+    return [self initWithPreset:AvesStylePresetDefault];
+}
+
 +(AvesStyle *)styleWithPreset:(AvesStylePreset)preset
 {
     return [[AvesStyle alloc] initWithPreset:preset];

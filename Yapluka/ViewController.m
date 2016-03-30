@@ -61,7 +61,7 @@
     [self.view.aves showWithMessage:@"Ceci est un message de test"
                 andStyleConfigBlock:^(AvesStyle *style)
      {
-         style.barTopMarginFromSuperview = 64.0f;
+         style.barTopMarginFromSuperview = self.topLayoutGuide.length;
          style.hideAfterDelaySeconds = 0;
          style.displayActivityIndicator = YES;
          style.barHeight = 40.0f;

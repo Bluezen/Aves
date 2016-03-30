@@ -30,6 +30,11 @@
     return self;
 }
 
+-(instancetype)init
+{
+    return [self initWithType:AvesAnimationTypeNoAnimation];
+}
+
 #pragma mark - Public
 
 -(void)show:(UIView *)view duration:(NSTimeInterval)duration withCompletedBlock:(AvesAnimationCompletionBlock)completedBlock

@@ -22,13 +22,25 @@
 
 -(instancetype)initWithStyle:(AvesStyle *)style
 {
-    self = [super init];
+    self = [super initWithFrame:CGRectZero];
     if (self) {
         self.style = style;
         self.didCallHide = NO;
     }
     return self;
 }
+
+-(instancetype)initWithFrame:(CGRect)frame
+{
+    return [self initWithStyle:[AvesStyle styleWithPreset:AvesStylePresetDefault]];
+}
+
+-(instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    return [self initWithStyle:[AvesStyle styleWithPreset:AvesStylePresetDefault]];
+}
+
+#pragma mark - Public
 
 -(void)showInSuperview:(UIView *)parentView withMessage:(NSString *)message
 {

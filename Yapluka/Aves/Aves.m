@@ -27,6 +27,11 @@
     return self;
 }
 
+-(instancetype)init
+{
+    return [self initWithSuperview:nil];
+}
+
 #pragma mark - Public 
 
 -(void)showWithMessage:(NSString *)message
