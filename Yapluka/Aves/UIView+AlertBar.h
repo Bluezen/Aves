@@ -13,4 +13,6 @@
 
 @property(nonatomic, strong) Aves *aves;
 
+@property(nonatomic, readonly) BOOL isAvesBarVisible;
+
 @end

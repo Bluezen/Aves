@@ -13,6 +13,8 @@ typedef void(^AvesStyleConfigBlock)(AvesStyle *style);
 
 @interface Aves : NSObject
 
+@property(nonatomic, readonly) AvesStyle *style;
+
 -(instancetype)initWithSuperview:(UIView *)superview NS_DESIGNATED_INITIALIZER;
 
 -(void)showWithMessage:(NSString *)message;
@@ -24,5 +26,7 @@ typedef void(^AvesStyleConfigBlock)(AvesStyle *style);
 -(void)showWithMessage:(NSString *)message presetStyle:(AvesStylePreset)presetStyle andStyleConfigBlock:(AvesStyleConfigBlock)styleBlock;
 
 -(void)hideWithCompletionBlock:(AvesAnimationCompletionBlock)block;
+
+-(BOOL)isAvesBarVisible;
 
 @end

@@ -32,6 +32,12 @@
     [showButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [showButton addTarget:self action:@selector(showButtonPushed:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:showButton];
+    
+    UIButton *moveButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0f, 250, 200, 44.0f)];
+    [moveButton setTitle:@"Move" forState:UIControlStateNormal];
+    [moveButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [moveButton addTarget:self action:@selector(moveButtonPushed:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:moveButton];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -49,6 +55,13 @@
 -(void)showButtonPushed:(id)sender
 {
     [self show];
+}
+
+-(void)moveButtonPushed:(id)sender
+{
+    if (self.view.isAvesBarVisible) {
+        self.view.aves.style.barTopMarginFromSuperview += 10;
+    }
 }
 
 -(void)hide

@@ -58,6 +58,16 @@
     [self showWithMessage:message andStyle:style];
 }
 
+-(AvesStyle *)style
+{
+    return [self toolbar].style;
+}
+
+-(BOOL)isAvesBarVisible
+{
+    return [self toolbar] != nil;
+}
+
 #pragma mark - Private
 
 
@@ -94,6 +104,7 @@
     for (UIView *view in self.superview.subviews) {
         if ([view isKindOfClass:[AvesToolbar class]]) {
             [view removeFromSuperview];
+//            [((AvesToolbar *)view) hideWithCompletionBlock:nil];
         }
     }
 }

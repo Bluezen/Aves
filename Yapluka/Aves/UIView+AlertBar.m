@@ -29,4 +29,14 @@
     }
 }
 
+-(BOOL)isAvesBarVisible
+{
+    id object = objc_getAssociatedObject(self, @selector(aves));
+    if (object && [object isKindOfClass:[Aves class]]) {
+        return [((Aves *)object) isAvesBarVisible];
+    } else {
+        return NO;
+    }
+}
+
 @end

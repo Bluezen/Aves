@@ -9,6 +9,9 @@
 #import "AvesToolbar.h"
 #import "AvesStyle.h"
 
+
+static void * KVOAvesToolbarContext = &KVOAvesToolbarContext;
+
 @interface AvesToolbar ()
 @property(nonatomic, strong) AvesStyle *style;
 @property(nonatomic, strong) UILabel *label;
@@ -40,6 +43,13 @@
     return [self initWithStyle:[AvesStyle styleWithPreset:AvesStylePresetDefault]];
 }
 
+-(void)removeFromSuperview
+{
+    [self removeBarTopMarginObserver];
+    
+    [super removeFromSuperview];
+}
+
 #pragma mark - Public
 
 -(void)showInSuperview:(UIView *)parentView withMessage:(NSString *)message
@@ -50,6 +60,8 @@
     }
     [parentView addSubview:self];
     [self applyStyle];
+    
+    [self observeBarTopMarginChanges];
     
     [self createLabelWithMessage:message];
     [self createActivityView];
@@ -74,6 +86,35 @@
         }
     }];
 }
+
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if (KVOAvesToolbarContext == context
+        && [keyPath isEqualToString:NSStringFromSelector(@selector(barTopMarginFromSuperview))]
+        && [object isKindOfClass:AvesStyle.class]) {
+        
+        [self setNeedsLayout];
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+
+-(void)observeBarTopMarginChanges
+{
+    [self.style addObserver:self forKeyPath:NSStringFromSelector(@selector(barTopMarginFromSuperview)) options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew context:KVOAvesToolbarContext];
+}
+
+-(void)removeBarTopMarginObserver
+{
+    @try {
+        [self.style removeObserver:self forKeyPath:NSStringFromSelector(@selector(barTopMarginFromSuperview))];
+    }
+    @catch (NSException * __unused exception) {}
+}
+
+
+#pragma mark - Private
 
 -(void)applyStyle
 {

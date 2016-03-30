@@ -13,6 +13,8 @@
 
 @interface AvesToolbar : UIView
 
+@property(nonatomic, readonly) AvesStyle *style;
+
 -(instancetype)initWithStyle:(AvesStyle *)style NS_DESIGNATED_INITIALIZER;
 
 -(void)showInSuperview:(UIView *)superview withMessage:(NSString *)message;
