@@ -17,6 +17,7 @@ typedef NS_ENUM(NSInteger, AvesAnimationType)
 
 typedef void(^AvesAnimationCompletionBlock)(void);
 
+typedef void(^AvesAnimationBlock)(void);
 
 @interface AvesAnimation : NSObject
 
@@ -26,8 +27,8 @@ typedef void(^AvesAnimationCompletionBlock)(void);
 
 -(instancetype)initWithType:(AvesAnimationType)type NS_DESIGNATED_INITIALIZER;
 
--(void)show:(UIView *)view duration:(NSTimeInterval)duration withCompletedBlock:(AvesAnimationCompletionBlock)completedBlock;
+-(void)show:(UIView *)view duration:(NSTimeInterval)duration animateBlock:(AvesAnimationBlock)animationBlock withCompletedBlock:(AvesAnimationCompletionBlock)completedBlock;
 
--(void)hide:(UIView *)view duration:(NSTimeInterval)duration withCompletedBlock:(AvesAnimationCompletionBlock)completedBlock;
+-(void)hide:(UIView *)view duration:(NSTimeInterval)duration animateBlock:(AvesAnimationBlock)animationBlock withCompletedBlock:(AvesAnimationCompletionBlock)completedBlock;
 
 @end

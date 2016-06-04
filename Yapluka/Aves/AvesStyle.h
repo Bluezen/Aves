@@ -37,6 +37,11 @@ typedef NS_ENUM(NSInteger, AvesStylePreset)
 @property(nonatomic, assign) CGFloat animationShowDuration;
 @property(nonatomic, assign) CGFloat animationHideDuration;
 @property(nonatomic, copy) AvesAnimationCompletionBlock animationShowCompletedBlock;
+/// Block executed during show animation
+@property(nonatomic, copy) AvesAnimationBlock animationShowAnimateBlock;
+/// Block executed during hide animation
+@property(nonatomic, copy) AvesAnimationBlock animationHideAnimateBlock;
+/// Block executed after completion of hide animation
 @property(nonatomic, copy) AvesAnimationCompletionBlock animationHideAfterDelayCompletedBlock;
 
 +(AvesStyle *)styleWithPreset:(AvesStylePreset)preset;

@@ -37,34 +37,34 @@
 
 #pragma mark - Public
 
--(void)show:(UIView *)view duration:(NSTimeInterval)duration withCompletedBlock:(AvesAnimationCompletionBlock)completedBlock
+-(void)show:(UIView *)view duration:(NSTimeInterval)duration animateBlock:(AvesAnimationBlock)animationBlock withCompletedBlock:(AvesAnimationCompletionBlock)completedBlock
 {
     switch (self.type) {
         case AvesAnimationTypeNoAnimation:
             [AvesAnimation noAnimation:view duration:duration withCompletedBlock:completedBlock];
             break;
         case AvesAnimationTypeSlideVertically:
-            [AvesAnimation slideVertically:duration showView:YES locationTop:YES view:view completed:completedBlock];
+            [AvesAnimation slideVertically:duration showView:YES locationTop:YES view:view animationBlock:animationBlock completed:completedBlock];
             break;
         case AvesAnimationTypeFade:
-            [AvesAnimation fade:duration showView:YES view:view completed:completedBlock];
+            [AvesAnimation fade:duration showView:YES view:view animationBlock:animationBlock completed:completedBlock];
             break;
         default:
             break;
     }
 }
 
--(void)hide:(UIView *)view duration:(NSTimeInterval)duration withCompletedBlock:(AvesAnimationCompletionBlock)completedBlock
+-(void)hide:(UIView *)view duration:(NSTimeInterval)duration animateBlock:(AvesAnimationBlock)animationBlock withCompletedBlock:(AvesAnimationCompletionBlock)completedBlock
 {
     switch (self.type) {
         case AvesAnimationTypeNoAnimation:
             [AvesAnimation noAnimation:view duration:duration withCompletedBlock:completedBlock];
             break;
         case AvesAnimationTypeSlideVertically:
-            [AvesAnimation slideVertically:duration showView:NO locationTop:YES view:view completed:completedBlock];
+            [AvesAnimation slideVertically:duration showView:NO locationTop:YES view:view animationBlock:animationBlock  completed:completedBlock];
             break;
         case AvesAnimationTypeFade:
-            [AvesAnimation fade:duration showView:NO view:view completed:completedBlock];
+            [AvesAnimation fade:duration showView:NO view:view animationBlock:animationBlock completed:completedBlock];
             break;
         default:
             break;
@@ -80,7 +80,7 @@
     }
 }
 
-+(void)slideVertically:(NSTimeInterval)duration showView:(BOOL)showView locationTop:(BOOL)locationTop view:( UIView *)view completed:(AvesAnimationCompletionBlock)completedBlock
++(void)slideVertically:(NSTimeInterval)duration showView:(BOOL)showView locationTop:(BOOL)locationTop view:( UIView *)view animationBlock:(AvesAnimationBlock)animationBlock completed:(AvesAnimationCompletionBlock)completedBlock
 {
     CGFloat actualDuration = duration > 0 ? duration : 0.5;
     [view layoutIfNeeded];
@@ -108,6 +108,10 @@
                      animations:^
     {
         view.transform = end;
+        
+        if (animationBlock) {
+            animationBlock();
+        }
     }
                      completion:^(BOOL finished)
     {
@@ -117,7 +121,7 @@
     }];
 }
 
-+(void)fade:(NSTimeInterval)duration showView:(BOOL)showView view:( UIView *)view completed:(AvesAnimationCompletionBlock)completedBlock
++(void)fade:(NSTimeInterval)duration showView:(BOOL)showView view:( UIView *)view animationBlock:(AvesAnimationBlock)animationBlock  completed:(AvesAnimationCompletionBlock)completedBlock
 {
     CGFloat actualDuration = duration > 0 ? duration : 0.5;
     CGFloat startAlpha = showView ? 0 : 1;
@@ -127,6 +131,11 @@
     
     [UIView animateWithDuration:actualDuration animations:^{
         view.alpha = endAlpha;
+        
+        if (animationBlock) {
+            animationBlock();
+        }
+        
     } completion:^(BOOL finished) {
         if(completedBlock) {
             completedBlock();

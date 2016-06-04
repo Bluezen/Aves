@@ -68,7 +68,7 @@ static void * KVOAvesToolbarContext = &KVOAvesToolbarContext;
     
     [self setNeedsLayout];
     
-    [self.style.animationShow show:self duration:self.style.animationShowDuration withCompletedBlock:self.style.animationShowCompletedBlock];
+    [self.style.animationShow show:self duration:self.style.animationShowDuration animateBlock:self.style.animationShowAnimateBlock withCompletedBlock:self.style.animationShowCompletedBlock];
 }
 
 -(void)hideWithCompletionBlock:(AvesAnimationCompletionBlock)block
@@ -78,7 +78,7 @@ static void * KVOAvesToolbarContext = &KVOAvesToolbarContext;
     self.didCallHide = true;
     
     __weak typeof(self)weakSelf = self;
-    [self.style.animationHide hide:self duration:self.style.animationHideDuration withCompletedBlock:^{
+    [self.style.animationHide hide:self duration:self.style.animationHideDuration animateBlock:self.style.animationHideAnimateBlock withCompletedBlock:^{
         __strong typeof(self) strongSelf = weakSelf;
         [strongSelf removeFromSuperview];
         if(block) {
