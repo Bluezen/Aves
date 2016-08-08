@@ -24,8 +24,17 @@ typedef NS_ENUM(NSInteger, AvesStylePreset)
 @property(nonatomic, assign) CGFloat barTopMarginFromSuperview;
 @property(nonatomic, strong) UIColor *textColor;
 @property(nonatomic, strong) UIFont *textFont;
-/// Supported mode: Top Bottom Center. Center by default or if unsupported mode is set.
+/// Supported mode: UIViewContentModeBottom UIViewContentModeTop UIViewContentModeCenter. Center by default or if unsupported mode is set.
 @property(nonatomic, assign) UIViewContentMode textVerticalAlignment;
+/// Number of line(s) of the label. Default number is 1.
+@property(nonatomic, assign) NSUInteger textNumberOfLines;
+/// Text horizontal alignement of the label. Default number is NSTextAlignmentCenter.
+@property(nonatomic, assign) NSTextAlignment textHorizontalAlignment;
+/// Inset of the alertView content (label and activity indicator). Default is (4,0,4,0).
+@property(nonatomic, assign) UIEdgeInsets contentEdgeInsets;
+/// Should the content be centered? Default is YES.
+@property(nonatomic, assign) BOOL shouldCenterContent;
+
 /// If set to 0, the bar won't hide after a delay. Default is 3 seconds.
 @property(nonatomic, assign) NSTimeInterval hideAfterDelaySeconds;
 @property(nonatomic, assign) BOOL repeats;

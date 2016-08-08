@@ -33,6 +33,10 @@
         self.animationHideDuration = 0.5f;
         self.animationShowCompletedBlock = nil;
         self.animationHideAfterDelayCompletedBlock = nil;
+        self.textNumberOfLines = 1;
+        self.textHorizontalAlignment = NSTextAlignmentCenter;
+        self.contentEdgeInsets = UIEdgeInsetsMake(4.0f, .0f, 4.0f, .0f);
+        self.shouldCenterContent = YES;
         
         switch (preset) {
             case AvesStylePresetInfo:

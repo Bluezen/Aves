@@ -71,13 +71,18 @@
 
 -(void)show
 {
-    [self.view.aves showWithMessage:@"Ceci est un message de test"
+    [self.view.aves showWithMessage:@"Ceci est un très très très très très très très long message de test"
                 andStyleConfigBlock:^(AvesStyle *style)
      {
          style.barTopMarginFromSuperview = self.topLayoutGuide.length;
          style.hideAfterDelaySeconds = 0;
          style.displayActivityIndicator = YES;
-         style.barHeight = 40.0f;
+         style.barHeight = 80.0f;
+         style.textNumberOfLines = 0;
+         style.textHorizontalAlignment = NSTextAlignmentLeft;
+         style.textVerticalAlignment = UIViewContentModeBottom;
+         style.shouldCenterContent = NO;
+         style.contentEdgeInsets = UIEdgeInsetsMake(10, 10, 4, 40);
      }];
 }
 

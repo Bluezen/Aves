@@ -127,9 +127,9 @@ static void * KVOAvesToolbarContext = &KVOAvesToolbarContext;
     self.label = [UILabel new];
     self.label.font = self.style.textFont;
     self.label.textColor = self.style.textColor;
-    self.label.textAlignment = NSTextAlignmentCenter;
+    self.label.textAlignment = self.style.textHorizontalAlignment;
     self.label.contentMode = self.style.textVerticalAlignment;
-    self.label.numberOfLines = 1;
+    self.label.numberOfLines = self.style.textNumberOfLines;
     self.label.text = message;
     
     [self addSubview:self.label];
@@ -162,7 +162,8 @@ static void * KVOAvesToolbarContext = &KVOAvesToolbarContext;
 -(void)adjustSubviews
 {
     static CGFloat const margin_between_activity_and_label = 6.0f;
-    static CGFloat const min_margin_contentMode = 4.0f;
+    static CGFloat const activity_indicator_width = 10.0f;
+    
     CGRect frame = CGRectZero;
     {
         frame = CGRectZero;
@@ -172,15 +173,24 @@ static void * KVOAvesToolbarContext = &KVOAvesToolbarContext;
         self.frame = frame;
     }
     {
-        [self.label sizeToFit];
-        frame = self.label.bounds;
-        frame.origin.x = ((CGRectGetWidth(self.bounds) - frame.size.width) * 0.5f) + (self.activityView ? 10.0f + margin_between_activity_and_label : 0.0f);
+        CGFloat labelMaxWidth = CGRectGetWidth(self.bounds) -  (self.style.displayActivityIndicator ? activity_indicator_width + margin_between_activity_and_label : 0) - self.style.contentEdgeInsets.right - self.style.contentEdgeInsets.left;
+        CGFloat labelMaxHeight = self.style.barHeight - self.style.contentEdgeInsets.top - self.style.contentEdgeInsets.bottom;
+        
+        CGSize labelSize = [self.label sizeThatFits:CGSizeMake(labelMaxWidth, labelMaxHeight)];
+        frame = CGRectMake(0, 0, labelSize.width, labelSize.height);
+        
+        if (self.style.shouldCenterContent) {
+            frame.origin.x =  ((CGRectGetWidth(self.bounds) - frame.size.width - self.style.contentEdgeInsets.right - self.style.contentEdgeInsets.left) * 0.5f) + (self.style.displayActivityIndicator ? activity_indicator_width + margin_between_activity_and_label : 0.0f);
+        } else {
+            frame.origin.x = self.style.contentEdgeInsets.left + (self.style.displayActivityIndicator ? activity_indicator_width + margin_between_activity_and_label : 0.0f);
+        }
+        
         
         if (self.label.contentMode == UIViewContentModeTop) {
-            frame.origin.y = min_margin_contentMode;
+            frame.origin.y = self.style.contentEdgeInsets.top;
         }
         else if (self.label.contentMode == UIViewContentModeBottom) {
-            frame.origin.y = CGRectGetHeight(self.bounds) - frame.size.height - min_margin_contentMode;
+            frame.origin.y = CGRectGetHeight(self.bounds) - frame.size.height - self.style.contentEdgeInsets.bottom;
         }
         else {
             frame.origin.y = (CGRectGetHeight(self.bounds) - frame.size.height) * 0.5f;
